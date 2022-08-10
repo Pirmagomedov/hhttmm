@@ -1,28 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>месенджер</title>
-    <script src="jquery.js"></script>
     <script>
-        $(function(){
-            $(".hide_bar, .tri_tochki_2").click(function(){
-                $(".hide_bar").css("display", "none");
-                $(".side").css({
-                    "animation-name": "side_out",
-                    "animation-duration": ".5s",
-                    "animation-fill-mode": "forwards"
-                });
-            });
-            $(".tri_tochki").click(function(){
-                $(".hide_bar").css("display", "block");
-                $(".side").css({
-                    "animation-name": "side_in",
-                    "animation-duration": ".5s",
-                    "animation-fill-mode": "forwards"
-                });
-            });
-        });
         new WebSocket("ws://178.208.92.108:9000");
     </script>
     <style>
