@@ -133,9 +133,10 @@
             
             client.onmessage = (message) => {
                 var ottuda = JSON.parse(message.data);
-                var elementik = `<p><span style="color: red;">${ottuda.name}</span>: ${ottuda.msg}</p><br>`;
+                var p = document.createElement("p");
+                p.innerHTML(`<span style="color: red;">${ottuda.name}</span>: ${ottuda.msg}<br>`);
                 var messages = document.querySelector(".messages");
-                messages.append(elementik);
+                messages.append(p);
             }
         });
     </script>
