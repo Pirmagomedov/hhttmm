@@ -129,7 +129,7 @@
             });
             
             client.onmessage = (message) => {
-                var ottuda = message.data;
+                var ottuda = JSON.parse(message.data);
                 console.log("От " + ottuda.name + ": " + ottuda.msg);
             }
         });
