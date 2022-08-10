@@ -120,10 +120,9 @@
             var el = document.querySelector("form");
             el.addEventListener("submit", function(e){
                 e.preventDefault();
-                var msg = "sdfdsf";// document.querySelector(".input").value;
-                var name = "sdad";
+                var msg = document.querySelector(".input").value;
                 client.send(
-                    JSON.stringify({ name, msg })
+                    JSON.stringify({ msg })
                 )
             });
             
