@@ -109,7 +109,8 @@
 <body>
     <div class="wrapper">
         <form>
-            <input class="input" type="text">
+            <input class="name" type="text"> <br>
+            <input class="msg" type="text"> <br>
             <input type="submit">
         </form>
     </div>
@@ -120,14 +121,16 @@
             var el = document.querySelector("form");
             el.addEventListener("submit", function(e){
                 e.preventDefault();
-                var msg = document.querySelector(".input").value;
+                var name = document.querySelector(".name").value;
+                var msg = document.querySelector(".msg").value;
                 client.send(
-                    JSON.stringify({ msg })
+                    JSON.stringify({name, msg})
                 )
             });
             
             client.onmessage = (message) => {
-                console.log(message.data);
+                var ottuda = message.data;
+                console.log("От " + ottuda.name + ": " + ottuda.msg);
             }
         });
     </script>
