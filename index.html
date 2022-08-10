@@ -121,7 +121,9 @@
             el.addEventListener("submit", function(e){
                 e.preventDefault();
                 var inn = document.querySelector(".input").value;
-                client.send(inn);
+                client.send(JSON.stringify({
+                    inn
+                }));
             });
             
             client.onmessage = (message) => {
