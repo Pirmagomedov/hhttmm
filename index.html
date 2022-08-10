@@ -134,7 +134,7 @@
             client.onmessage = (message) => {
                 var ottuda = JSON.parse(message.data);
                 var p = document.createElement("p");
-                p.innerHTML(`<span style="color: red;">${ottuda.name}</span>: ${ottuda.msg}<br>`);
+                p.innerHTML = `<span style="color: red;">${ottuda.name}</span>: ${ottuda.msg}<br>`;
                 var messages = document.querySelector(".messages");
                 messages.append(p);
             }
