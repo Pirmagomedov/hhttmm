@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>месенджер</title>
-    <script>
-        new WebSocket("ws://178.208.92.108:9000");
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
@@ -111,27 +108,21 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="tri_tochki">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="hmm">
-            <div>
-                Хмм, что-то скучно... Давай кому-нибудь напишем?
-            </div>
-        </div>
+        <form>
+            <input type="text">
+            <input type="submit">
+        </form>
     </div>
-    <!-- ТО ЧТО БУДЕТ СЛЕВА ПОДЛЕТАТЬ -->
-
-    <div class="hide_bar" style="position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,.4);display:none;"></div>
-    <div class="side">
-        <div class="tri_tochki_2">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <!-- <div class="komu">Выберите кому бы хотели написать?</div> -->
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+           const client = new WebSocket("ws://178.208.92.108:9000");
+            
+            var el = document.querySelector("form");
+            el.addEventListener("submit", function(e){
+                e.preventDefault();
+                client.send("12345");
+            });
+        });
+    </script>
 </body>
 </html>
