@@ -120,10 +120,11 @@
             var el = document.querySelector("form");
             el.addEventListener("submit", function(e){
                 e.preventDefault();
-                var inn = document.querySelector(".input").value;
+                var msg = "sdfdsf";// document.querySelector(".input").value;
+                var name = "sdad";
                 client.send(
-                    {msg: "смс с клиента"}
-                );
+                    JSON.stringify({ name, msg })
+                )
             });
             
             client.onmessage = (message) => {
