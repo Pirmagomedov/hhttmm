@@ -113,6 +113,9 @@
             <input class="msg" type="text"> <br>
             <input type="submit">
         </form>
+        <div class="messages">
+            
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
@@ -130,7 +133,9 @@
             
             client.onmessage = (message) => {
                 var ottuda = JSON.parse(message.data);
-                console.log("От " + ottuda.name + ": " + ottuda.msg);
+                var elementik = `<p><span style="color: red;">${ottuda.name}</span>: ${ottuda.msg}</p><br>`;
+                var messages = document.querySelector(".messages");
+                messages.append(elementik);
             }
         });
     </script>
