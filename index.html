@@ -124,9 +124,9 @@
                 client.send(inn);
             });
             
-            client.onmessage((message) => {
+            client.onmessage = (message) => {
                 console.log(message);
-            });
+            }
         });
     </script>
 </body>
